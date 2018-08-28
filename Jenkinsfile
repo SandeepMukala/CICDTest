@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('') {
       steps {
-        sh 'echo "hello blue ocean"'
+        echo 'Hello Blue Ocean'
+        sh 'echo "I like you so much"'
       }
     }
   }
