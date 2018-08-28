@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('') {
       steps {
-        git(url: 'https://github.com/SandeepMukala/CICDTest.git', poll: true)
+        sh 'echo "hello blue ocean"'
       }
     }
   }
