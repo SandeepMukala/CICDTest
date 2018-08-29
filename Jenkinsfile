@@ -23,8 +23,9 @@ pipeline {
 					name: 'SELECTED_WORKER_VERSION',
 					description: 'Please select worker version'
 				]])
+    	vCoreInput = "${workerSizeInput}"
         echo 'deploying artifact to Cloud Hub'
-        bat 'anypoint-cli runtime-mgr cloudhub-application deploy --runtime 3.9.0 --workerSize ${vCoreSizeInput} "cli-cicd" "${workspace}/cli-cicd-test/target/cicdtest-1.0.0-SNAPSHOT.zip" --username="sandeep_m" --password="Whishworks@2018"'
+        bat 'anypoint-cli runtime-mgr cloudhub-application deploy --runtime 3.9.0 --workerSize ${vCoreInput} "cli-cicd" "${workspace}/cli-cicd-test/target/cicdtest-1.0.0-SNAPSHOT.zip" --username="sandeep_m" --password="Whishworks@2018"'
       }
     }
   }
