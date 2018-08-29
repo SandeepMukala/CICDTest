@@ -28,6 +28,7 @@ pipeline {
             }
 
             echo 'deploying artifact to Cloud Hub'
+            echo '${workspace}'
             bat 'anypoint-cli runtime-mgr cloudhub-application deploy --runtime 3.9.0 --workerSize ${vCoreInput} "cli-cicd" "${workspace}/cli-cicd-test/target/cicdtest-1.0.0-SNAPSHOT.zip" --username="sandeep_m" --password="Whishworks@2018"'
           }
         }
