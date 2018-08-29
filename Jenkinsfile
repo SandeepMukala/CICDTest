@@ -5,12 +5,12 @@ pipeline {
       steps {
         echo 'Pipeline started'
         git 'https://github.com/SandeepMukala/CICDTest.git'
-        sh 'mvn clean install package'
+        bat 'mvn clean install package'
       }
     }
     stage('MUnit tests') {
       steps {
-        sh 'mvn test'
+        bat 'mvn test'
         catchError() {
           echo 'MUnit Test failure'
         }
