@@ -25,6 +25,8 @@ pipeline {
                 description: 'Please select worker version'
               ]])
               vCoreInput = "${workerSizeInput}"
+          echo ${vCoreInput}
+          bat 'echo %WORKSPACE%'
             }
 
             echo 'deploying artifact to Cloud Hub'
