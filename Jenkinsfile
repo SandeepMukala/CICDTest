@@ -5,16 +5,17 @@ pipeline {
       steps {
         echo 'Pipeline started'
         git 'https://github.com/SandeepMukala/CICDTest.git'
-        bat 'mvn clean install package'
+        bat 'mvn clean install package -DskipTests=true'
       }
     }
     stage('MUnit tests') {
       steps {
         bat 'mvn test'
-        catchError() {
-          echo 'MUnit Test failure'
-        }
-
+      }
+    }
+    stage('Deploy') {
+      steps {
+        input 'Select the size of vCore'
       }
     }
   }
