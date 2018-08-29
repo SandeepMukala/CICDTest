@@ -25,8 +25,8 @@ pipeline {
                 description: 'Please select worker version'
               ]])
               vCoreInput = "${workerSizeInput}"
-              echo 'vCoreInput'
-              bat 'echo %vCoreInput%'
+              echo "$vCoreInput"
+              bat "echo %vCoreInput%"
               bat 'echo %WORKSPACE%'
             }
 
