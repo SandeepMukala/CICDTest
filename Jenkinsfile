@@ -26,7 +26,7 @@ pipeline {
               ]])
               vCoreInput = "${workerSizeInput}"
               echo "$vCoreInput"
-              bat "echo %vCoreInput%"
+              bat "echo $vCoreInput"
               bat 'echo %WORKSPACE%'
             }
 
