@@ -15,8 +15,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        def vCoreSizeInput = input(
-                id: 'vCoreSizeInput', message: 'Please select size of vCore for Deployment:?', 
+        def vCoreSizeInput = input(id: 'vCoreSizeInput', message: 'Please select size of vCore for Deployment:?', 
                 parameters: [
                   [
                     $class: 'ChoiceParameterDefinition', choices: '0.1\n0.2\n1\n2\n4\n8\n16', 
