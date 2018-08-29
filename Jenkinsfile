@@ -1,10 +1,20 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('Checkout & Build') {
       steps {
-        echo 'Hello Blue Ocean'
-        sh 'echo "I like you so much"'
+        echo 'Pipeline started'
+        git 'https://github.com/SandeepMukala/CICDTest.git'
+        sh 'mvn clean install package'
+      }
+    }
+    stage('MUnit tests') {
+      steps {
+        sh 'mvn test'
+        catchError() {
+          echo 'MUnit Test failure'
+        }
+
       }
     }
   }
