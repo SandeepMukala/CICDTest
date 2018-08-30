@@ -28,12 +28,10 @@ pipeline {
               echo "$vCoreInput"
               bat "echo $vCoreInput"
               bat 'echo %WORKSPACE%'
+              bat 'echo deploying artifact to cloud hub'
               bat "anypoint-cli runtime-mgr cloudhub-application deploy --runtime 3.9.0 --workerSize $vCoreInput \"cli-cicd\" \"%WORKSPACE%/target/cicdtest-1.0.0-SNAPSHOT.zip\" --username=\"sandeep_m\" --password=\"Whishworks@2018\""
             }
 
-            echo 'deploying artifact to Cloud Hub'
-            bat 'echo %WORKSPACE%'
-            bat 'anypoint-cli runtime-mgr cloudhub-application deploy --runtime 3.9.0 --workerSize %vCoreInput% "cli-cicd" "%WORKSPACE%/cli-cicd-test/target/cicdtest-1.0.0-SNAPSHOT.zip" --username="sandeep_m" --password="Whishworks@2018"'
           }
         }
       }
